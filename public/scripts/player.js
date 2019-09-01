@@ -257,14 +257,10 @@ var $playerFunctionality = new function() {
       $($audio.Source).attr("src", musicData[this.musicItem].file);
       $musicViewer.GetMusicTitle.find(".music-title-name").html(musicData[this.musicItem].name + "<br>");
       $musicViewer.GetMusicTitle.find(".music-title-band").html(musicData[this.musicItem].band);
-      //shuffle music
       if($buttons.GetShuffle) {
-        //randomize file to play
         var randomFile = Math.floor((Math.random() * musicData.length) + 1);
-        //and assigne number to variable $musicViewer.GetMusicItem
         this.musicItem = randomFile;
       }
-      //load new file
       $audio.Media.load();
       if($buttons.PlayBtn.text() === "pause_circle_filled") {
         this.PlayFile();
